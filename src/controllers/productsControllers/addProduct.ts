@@ -4,7 +4,8 @@ import { ResultSetHeader } from 'mysql2';
 
 export const addProduct = async (req: Request, res: Response): Promise<void> => {
     const { name, description, price, stock, category } = req.body;
-    const imageUrl = req.file?.filename; // Obtener el nombre del archivo de la imagen subida
+    const imageUrl = req.file?.filename; 
+    console.log(req.body)
 
     if (!imageUrl) {
         res.status(400).json({ message: 'Image is required' });
